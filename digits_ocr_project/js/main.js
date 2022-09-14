@@ -1,4 +1,3 @@
-Vue.config.productionTip = false
 console.log("Hai javacript here");
 const image_input = document.querySelector("#image-input");
 
