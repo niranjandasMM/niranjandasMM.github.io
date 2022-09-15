@@ -1,4 +1,3 @@
-
 console.log("Hai javscript here ")
 var loadFile = function(event) {
     var image = document.getElementById('output');
