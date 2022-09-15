@@ -1,4 +1,5 @@
 console.log("Hai javscript here, added cross-origin ")
+console.log("Canvas added")
 var loadFile = function(event) {
     var image = document.getElementById('output');
     image.src = URL.createObjectURL(event.target.files[0]);
