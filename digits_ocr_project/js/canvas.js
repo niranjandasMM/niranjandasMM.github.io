@@ -3,7 +3,7 @@ console.log("Javascript Here, added saving method also ")
 const canvas = document.getElementById('drawing-board');
 const toolbar = document.getElementById('toolbar');
 const ctx = canvas.getContext('2d');
-let display_btn = document.querySelector('#display')
+const display_btn = document.querySelector('#display')
 
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
@@ -59,12 +59,9 @@ canvas.addEventListener('mouseup', e => {
 
 canvas.addEventListener('mousemove', draw);
 
-let db 
 
 display_btn.addEventListener("click", function () {
-        let dataURI = canvas.toDataURL();
+        const dataURI = canvas.toDataURL();
         console.log(dataURI);
-        db += dataURI
-    })
-console.log("reading from db")
-console.log(db)
+    });
+
