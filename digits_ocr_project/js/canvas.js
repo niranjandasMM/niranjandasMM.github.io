@@ -59,7 +59,12 @@ canvas.addEventListener('mouseup', e => {
 
 canvas.addEventListener('mousemove', draw);
 
+let db 
+
 display_btn.addEventListener("click", function () {
         let dataURI = canvas.toDataURL();
         console.log(dataURI);
+        db += dataURI
     })
+console.log("reading from db")
+console.log(db)
