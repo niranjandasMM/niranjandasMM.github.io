@@ -64,7 +64,7 @@ canvas.addEventListener('mousemove', draw);
 display_btn.addEventListener("click", function () {
         const dataURI = canvas.toDataURL();
         console.log(dataURI);
-        output.innerHTML = dataURI
-        console.log("done")
+        output.innerHTML = dataURI;
+        console.log("done");
     });
 
