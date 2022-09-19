@@ -4,6 +4,7 @@ const canvas = document.getElementById('drawing-board');
 const toolbar = document.getElementById('toolbar');
 const ctx = canvas.getContext('2d');
 const display_btn = document.querySelector('#display')
+const output = document.querySelector('#output_display')
 
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
@@ -63,5 +64,6 @@ canvas.addEventListener('mousemove', draw);
 display_btn.addEventListener("click", function () {
         const dataURI = canvas.toDataURL();
         console.log(dataURI);
+        output.innerHTML = dataURI
     });
 
