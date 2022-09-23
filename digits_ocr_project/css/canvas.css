@@ -50,5 +50,6 @@ h1 {
 
 .drawing-board {
     display: flex;
+    border: 2px solid;
 }
     
