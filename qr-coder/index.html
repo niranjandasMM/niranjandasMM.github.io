@@ -40,7 +40,7 @@
                 document.getElementById("result").innerHTML = `
                     <h2> Check this site to check for Real or Fake Product : </h2>
                     <p>Result:<a href="${decodedText}"> ${decodedText}</a></p>
-                    <p>This barcode/Qrcode Number :${decodedText} is ${validator.validate( 'decodedText' )} )</p>
+                    <p>This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
                     <button><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product</a></button>
                       
                     <a href=""><button>Scan Again</button></a>
