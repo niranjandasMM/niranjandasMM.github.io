@@ -11,7 +11,6 @@
 </body>
 <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
 <script>
-    console.log("Barcoder initilized")
     function docReady(fn) {
         // see if DOM is already available
         if (document.readyState === "complete"
@@ -36,17 +35,15 @@
                 var validator = new Barcoder('ean13');
                  console.log( ean5 + ' is valid: ' + validator.validate( ean5 ) );
                 // }
-                let result = validator.validate( 'decodedText' )
-                let result2 = validator.validate( decodedText )
+                let result = validator.validate( decodedText )
                 console.log("result is : ", result)
-                console.log("result2 is : ", result2)
                 document.getElementById("result").innerHTML = `
                     <h2> Check this site to check for Real or Fake Product : </h2>
-                    <p>Result:<a href="${decodedText}"> ${decodedText}</a></p>
+                    <p>Barcode Number:<a href="${decodedText}"> ${decodedText}</a></p>
                     <p>This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
-                    <button><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product</a></button>
+                    <button><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product For Detail Information on GS1</a></button>
                       
-                    <a href=""><button>Scan Again</button></a>
+                    <a href=""><button>Scan Another</button></a>
                         `;
                 
                 html5QrcodeScanner.pause();
@@ -56,12 +53,6 @@
             
             }
         }
-
-        function clicked() {
-            console.log("clicked");
-        }
-        
-        
 
         var html5QrcodeScanner = new Html5QrcodeScanner(
             "qr-reader", { fps: 10, qrbox: 250 });
