@@ -9,8 +9,14 @@
 }
     </style>
 <body>
-    <div id="qr-reader" style="width:500px"></div>
-    <div id="qr-reader-results"></div>
+    <br>
+    <br>
+    <fieldset style="border: 3px solid rgb(232,254,21);
+  width: 400px;
+  margin:auto;">
+        <div id="qr-reader" style="width:500px"></div>
+        <div id="qr-reader-results"></div>
+    </fieldset>
     <fieldset style="border: 1px solid rgb(255,232,57);
   width: 400px;
   margin:auto;">
@@ -49,11 +55,14 @@
                 let result = validator.validate( decodedText )
                 console.log("result is : ", result)
                 document.getElementById("result").innerHTML = `
+                    <br>
+                    <br>
                     <h2> Check this site to check for Real or Fake Product : </h2>
                     <p>Barcode Number:<a href="${decodedText}"> ${decodedText}</a></p>
                     <p>This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
+                    <br>
                     <button type="button" class="btn btn-outline-success" ><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product For Detail Information on GS1</a></button>
-                      
+                    <br>
                     <a href=""><button type="button" class="btn btn-outline-warning">Scan Another</button></a>
                         `;
                 
