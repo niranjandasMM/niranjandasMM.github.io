@@ -44,7 +44,17 @@
                     <iframe id="wshost" width="990" height="1200" src="https://www.gs1.org?embed/${decodedText}" frameborder="0" allowfullscreen></iframe>
                     <embed src="https://www.gs1.org/embed/services/verified-by-gs1/results?gtin=${decodedText}" style="width:500px; height: 300px;">
                     <embed src="https://www.gs1.org" style="width:500px; height: 300px;">
-                    <iframe src="url.php" width="925" height="2400" frameborder="0" ></iframe>
+                    export default async function handler(req, res) {
+                      const url = `https://${req.query.url}`;
+                      const response = await fetch(url);
+                      const urlContents = await response.text();
+
+                      // Prepend the base to make sure all relative and absolute paths work
+                      const urlContentsWithHead = `<base href='${url}' /></head>${urlContents}`;
+
+                      res.status(200).send(urlContentsWithHead);
+                        }
+                    <iframe src={`/api/url/${url}`} />
                     <a href=""><button>Scan Again</button></a>
                         `;
                 
