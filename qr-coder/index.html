@@ -37,7 +37,9 @@
                  console.log( ean5 + ' is valid: ' + validator.validate( ean5 ) );
                 // }
                 let result = validator.validate( 'decodedText' )
+                let result2 = validator.validate( decodedText )
                 console.log("result is : ", result)
+                console.log("result2 is : ", result2)
                 document.getElementById("result").innerHTML = `
                     <h2> Check this site to check for Real or Fake Product : </h2>
                     <p>Result:<a href="${decodedText}"> ${decodedText}</a></p>
