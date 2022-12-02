@@ -7,11 +7,11 @@
     <div id="result"></div>
     <br>
     <script src="https://unpkg.com/html5-qrcode"></script>
-
+    <script src="barcoder.min.js"></script>
 </body>
 <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
 <script>
-
+    console.log("Barcoder initilized")
     function docReady(fn) {
         // see if DOM is already available
         if (document.readyState === "complete"
@@ -32,19 +32,17 @@
                 lastResult = decodedText;
                 // Handle on success condition with the decoded message.
                 console.log(`Scan result ${decodedText}`, decodedResult);
-                // function clicked() {
-                //     var html5QrcodeScanner = new Html5QrcodeScanner(
-                //         "qr-reader", { fps: 10, qrbox: 250 });
-                //     html5QrcodeScanner.render(onScanSuccess);
+                var ean5 = '4901034404559';
+                var validator = new Barcoder('ean13');
+                 console.log( ean5 + ' is valid: ' + validator.validate( ean5 ) );
                 // }
+                
                 document.getElementById("result").innerHTML = `
                     <h2> Check this site to check for Real or Fake Product : </h2>
                     <p>Result:<a href="${decodedText}"> ${decodedText}</a></p>
+                    <p>This barcode/Qrcode Number :${decodedText} is validator.validate( '${decodedText}' )</p>
                     <button><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product</a></button>
-                    <iframe id="wshost" width="990" height="1200" src="https://www.gs1.org?embed/${decodedText}" frameborder="0" allowfullscreen></iframe>
-                    <embed src="https://www.gs1.org/embed/services/verified-by-gs1/results?gtin=${decodedText}" style="width:500px; height: 300px;">
-                    <embed src="https://www.gs1.org" style="width:500px; height: 300px;">
-                    <iframe src="https://www.google.com/" />
+                      
                     <a href=""><button>Scan Again</button></a>
                         `;
                 
