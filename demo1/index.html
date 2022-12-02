@@ -8,11 +8,17 @@
     Take a look at your console.
     <script src="barcoder.min.js"></script>
     <script>
-      var ean1 = '890318320095';
-      var ean2 = '8906021922050';
+      var ean1 = '8906021922050';
+      var ean2 = '8906101900050';
+      var ean3 = '8710103700371';
+      var ean4 = '8901450001246';
+      var ean5 = '4901034404559';
       var validator = new Barcoder('ean13');
       console.log( ean1 + ' is valid: ' + validator.validate( ean1 ) );
       console.log( ean2 + ' is valid: ' + validator.validate( ean2 ) );
+      console.log( ean3 + ' is valid: ' + validator.validate( ean3 ) );
+      console.log( ean4 + ' is valid: ' + validator.validate( ean4 ) );
+      console.log( ean5 + ' is valid: ' + validator.validate( ean5 ) );
     </script>
   </body>
 </html>
