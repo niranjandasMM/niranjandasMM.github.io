@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title> Fake Product detector</title>
+<body>
+    <div id="qr-reader" style="width:500px"></div>
+    <div id="qr-reader-results"></div>
+    <div id="result"></div>
+    <br>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+</body>
+<script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
+<script>
+
+
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete"
+            || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    docReady(function () {
+        var resultContainer = document.getElementById('qr-reader-results');
+        var lastResult, countResults = 0;
+        function onScanSuccess(decodedText, decodedResult) {
+            if (decodedText !== lastResult) {
+                ++countResults;
+                lastResult = decodedText;
+                // Handle on success condition with the decoded message.
+                console.log(`Scan result ${decodedText}`, decodedResult);
+                // function clicked() {
+                //     var html5QrcodeScanner = new Html5QrcodeScanner(
+                //         "qr-reader", { fps: 10, qrbox: 250 });
+                //     html5QrcodeScanner.render(onScanSuccess);
+                // }
+                document.getElementById("result").innerHTML = `
+                    <h2> Check this site to check for Real or Fake Product : </h2>
+                    <p>Result:<a href="${decodedText}"> ${decodedText}</a></p>
+                    <button><a href="https://www.google.com/search?q=${decodedText}">Check</a></button>
+                    <a href=""><button>Scan Again</button></a>
+                        `;
+                
+                html5QrcodeScanner.pause();
+                html5QrcodeScanner.clear();
+                html5QrcodeScanner.stop();
+                html5QrcodeScanner.remove();
+            
+            }
+        }
+
+        function clicked() {
+            console.log("clicked");
+        }
+        
+        
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    });
+
+
+</script>
+</head>
+</html>
