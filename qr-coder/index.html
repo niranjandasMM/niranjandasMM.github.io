@@ -58,10 +58,10 @@
                 console.log("result is : ", result)
                 let result = validator.validate( decodedText )
                 console.log("result is : ", result)
-                if (result == "True"){
+                if (validator.validate( decodedText )== "True"){
                     console.log("STR True is run ")			
                     }
-                if (result == True){
+                if (validator.validate( decodedText ) == True){
                     console.log("Simple True turned on")
                 document.getElementById("result").innerHTML = `
                     <br>
