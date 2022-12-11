@@ -30,6 +30,7 @@
     <script src="barcoder.min.js"></script>
 <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
 <script>
+    console.log("Wroking 1st phase")
     function docReady(fn) {
         // see if DOM is already available
         if (document.readyState === "complete"
@@ -57,7 +58,7 @@
                 let result = validator.validate( decodedText );
                 console.log("result is : ", result);
                 if (result == "true") console.log("yes Result == true runs fine");
-                if (result == "true")  { console.log("old way True worked ") }; 
+                if (result == "true")  { console.log("old way True worked ") }; else { console.log("else worked") };
                 document.getElementById("result").innerHTML = `
                     <br>
                     <br>
