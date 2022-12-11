@@ -70,13 +70,6 @@
                     <br>
                     
                     <p style="color: white">This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
-                    <p style="color: white">This barcode/Qrcode Number :${decodedText} is ${ if (result == "True"){
-                                        console.log("STR True is run ")			
-                                        }
-                                    if (result == True){
-                                        console.log("Simple True turned on")
-                            } } )
-    </p>
                     <br>
                     <button type="button" class="btn btn-outline-success" ><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product For Detail Information on GS1</a></button>
                     <br>
