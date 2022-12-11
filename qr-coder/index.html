@@ -59,8 +59,9 @@
                 // }
                 let result = validator.validate( decodedText );
                 console.log("result is : ", result);
-                if (validator.validate( decodedText ) == true) console.log("yes Result == true runs fine");
-                if (validator.validate( decodedText ) == true)  { console.log("old way True worked ") };
+                if (validator.validate( decodedText ) == true) result = "Genuine";
+                if (validator.validate( decodedText ) == false)  result = "Fake";
+                console.log(result)
                 document.getElementById("result").innerHTML = `
                     <br>
                     <br>
