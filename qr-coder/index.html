@@ -70,8 +70,7 @@
                     <br>
                     <p style="color: white" >Barcode Number:<a href="${decodedText}"> ${decodedText}</a></p>
                     <br>
-                    <p id ="demo> </p>
-                    ${if (validator.validate( decodedText ) == true ) document.getElementById("demo").innerHTML = "The product is Genuine";
+                    <p id ="demo"> </p>
                 
                     <p style="color: white">This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
                     <br>
@@ -82,7 +81,7 @@
                     <a href=""><button type="button" class="btn btn-outline-warning">Scan Another</button></a> 
                     </fieldset>`
                     `
-                    
+                if (validator.validate( decodedText ) == true ) document.getElementById("demo").innerHTML = "The product is Genuine";
                 html5QrcodeScanner.pause();
                 html5QrcodeScanner.clear();
                 html5QrcodeScanner.stop();
