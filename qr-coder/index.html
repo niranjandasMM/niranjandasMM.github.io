@@ -54,14 +54,14 @@
                 var validator = new Barcoder('ean13');
                  console.log( ean5 + ' is valid: ' + validator.validate( ean5 ) );
                 // }
-                let result = validator.validate( decodedText )
-                console.log("result is : ", result)
-                let result = validator.validate( decodedText )
-                console.log("result is : ", result)
-                if (validator.validate( decodedText )== "True"){
+                let result = validator.validate( decodedText );
+                console.log("result is : ", result);
+                let result = validator.validate( decodedText );
+                console.log("result is : ", result);
+                if (validator.validate( decodedText ) )== "True"){
                     console.log("STR True is run ")			
                     }
-                if (validator.validate( decodedText ) == True){
+                if (validator.validate( decodedText ) ) == True){
                     console.log("Simple True turned on")
                 document.getElementById("result").innerHTML = `
                     <br>
