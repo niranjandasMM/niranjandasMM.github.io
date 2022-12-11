@@ -11,6 +11,10 @@
     </style>
 <body>
     <br>
+<br>
+<br>
+<br>
+<br>
     <br>
     <fieldset  style="
   width: 500px;
@@ -57,15 +61,19 @@
                 document.getElementById("result").innerHTML = `
                     <br>
                     <br>
+          <fieldset>
                     <h2> Check this site to check for Real or Fake Product : </h2>
+       <br>
                     <p>Barcode Number:<a href="${decodedText}"> ${decodedText}</a></p>
+<br>
                     <p>This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
                     <br>
                     <button type="button" class="btn btn-outline-success" ><a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product For Detail Information on GS1</a></button>
                     <br>
                     <a href=""><button type="button" class="btn btn-outline-warning">Scan Another</button></a>
+<br>
                         `;
-                
+                </fieldset>
                 html5QrcodeScanner.pause();
                 html5QrcodeScanner.clear();
                 html5QrcodeScanner.stop();
