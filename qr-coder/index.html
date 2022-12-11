@@ -67,22 +67,22 @@
                     <br>
                     <br>
                     <fieldset style="border: 2px groove (internal value)">
-                    <h2 style="color: white"> Check this site to check for Real or Fake Product : </h2>
+                    <h2 style="color: white"> Product Information Based on GS1 : </h2>
                     <br>
-                    <p style="color: white" >Barcode Number:<a href="${decodedText}"> ${decodedText}</a></p>
+                    <p style="color: white" >   Barcode Number:<a href="${decodedText}"> ${decodedText}</a></p>
                     <br>
-                    <p id ="demo" style="color: white"> </p>
+                    <button  class="btn btn-outline-success" id ="demo" style="color: white"> </button>
                 
-                    <p style="color: white">This barcode/Qrcode Number :${decodedText} is ${validator.validate( decodedText )} )</p>
+                    <p style="color: white">   This barcode/Qrcode No. :${decodedText} is ${validator.validate( decodedText )} )</p>
                     <br>
                     <button type="button" class="btn btn-outline-success" >
-                    <a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}">Check The Product For Detail Information on GS1</a></button>
+                    <a href="https://www.gs1.org/services/verified-by-gs1/results?gtin=${decodedText}"> Check The Product For Detail Information on GS1</a></button>
                     <br>
                     <br>
                     <a href=""><button type="button" class="btn btn-outline-warning">Scan Another</button></a> 
                     </fieldset>`
                     
-                if (validator.validate( decodedText ) == true ) document.getElementById("demo").innerHTML = "The product is Genuine";
+                if (validator.validate( decodedText ) == true ) document.getElementById("demo").innerHTML = "   The product is Genuine";
                 html5QrcodeScanner.pause();
                 html5QrcodeScanner.clear();
                 html5QrcodeScanner.stop();
